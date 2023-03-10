@@ -14,6 +14,15 @@
         .font-sarabun {
             font-family: 'Sarabun', sans-serif;
         }
+        .italic {
+            font-style: italic;
+        }
+        .font-semibold {
+            font-weight: 600;
+        }
+        .text-blink {
+            color: pink;
+        }
     </style>
     <!-- meta นี้ไม่ต้องมีก็ได้ -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -27,6 +36,6 @@
     <h2 class="font-sarabun">ทดสอบภาษาไทย</h2>
     <!-- ภาษาไทยต้อง style ด้วย font thai ไม่งั้นไม่แสดง -->
     <p class="">น้องนีดีใจ ได้ไปคอนเสิร์ต</p>
-    <p class="font-sarabun">น้องนีดีใจ ได้ไปคอนเสิร์ต</p>
+    <p class="font-sarabun">น้องนีดีใจ <span class="font-semibold italic text-blink">ได้ไปคอนเสิร์ต</span></p>
 </body>
 </html>
