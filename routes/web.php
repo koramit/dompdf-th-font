@@ -12,7 +12,11 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+use Barryvdh\DomPDF\Facade\Pdf;
 
 Route::get('/', function () {
-    return view('welcome');
+    return Pdf::loadView('pdf.thai-font', [
+        'title' => 'Test DOMPDF',
+        'content' => 'just test basic PDF'
+    ])->stream();
 });
