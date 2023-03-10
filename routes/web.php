@@ -15,8 +15,13 @@ use Illuminate\Support\Facades\Route;
 use Barryvdh\DomPDF\Facade\Pdf;
 
 Route::get('/', function () {
-    return Pdf::loadView('pdf.thai-font', [
-        'title' => 'Test DOMPDF',
-        'content' => 'just test basic PDF'
-    ])->stream();
+
+    return Pdf::setOptions([
+            'isRemoteEnabled' => true, // อนุญาตให้ download font จาก link ได้
+            'fontDir' => storage_path('fonts'), // folder ต้อง exists และมีสิทธิ์ RW
+            'fontCache' => storage_path('fonts'), // folder ต้อง exists และมีสิทธิ์ RW
+        ])->loadView('pdf.thai-font', [
+            'title' => 'Test DOMPDF',
+            'content' => 'just test basic PDF'
+        ])->stream();
 });
