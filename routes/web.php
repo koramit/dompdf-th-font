@@ -25,3 +25,7 @@ Route::get('/', function () {
             'content' => 'just test basic PDF'
         ])->stream();
 });
+
+Route::get('/thai-three-line', function () {
+    return Pdf::loadView('pdf.thai-three-line', ['name' => 'ญาติพันธุ์จอน หมอนหมิ่น'])->stream();
+});
